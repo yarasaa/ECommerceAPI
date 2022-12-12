@@ -38,7 +38,7 @@ namespace ECommerceAPI.Persistence.Repositories
             var query=Table.AsQueryable();
             if(!tracking)
                 query=query.AsNoTracking();
-            return await query.FirstOrDefaultAsync(x=>x.Id==Guid.Parse(id));
+            return await query.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
         }
 
         public async Task<T> GetSingleAsync(System.Linq.Expressions.Expression<Func<T, bool>> method, bool tracking = true)
